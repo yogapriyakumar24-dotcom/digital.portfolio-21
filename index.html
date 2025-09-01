@@ -162,6 +162,37 @@
       color: #f4d35e;
     }
 
+    /* Certificates */
+    .certi-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .certi-card {
+      background: rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      transition: 0.3s;
+      border: 2px solid transparent;
+    }
+
+    .certi-card a {
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      color: #00d4ff;
+      display: block;
+      margin-top: 10px;
+    }
+
+    .certi-card:hover {
+      border-color: #f4d35e;
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.4);
+    }
+
     #resume a {
       display: inline-block;
       background: #f4d35e;
@@ -321,10 +352,19 @@
 
     <section id="certi">
       <h2>Certificates</h2>
-      <div>
-        <a href="WEB.PIC.png" target="_blank">Certificate 1</a><br>
-        <a href="Snapchat-966804533.jpg" target="_blank">Certificate 2</a><br>
-        <a href="1000073218.png" target="_blank">Certificate 3</a>
+      <div class="certi-container">
+        <div class="certi-card">
+          <h3>Web Development Certificate</h3>
+          <a href="WEB.PIC.png" target="_blank">View Certificate</a>
+        </div>
+        <div class="certi-card">
+          <h3>Front-End Workshop</h3>
+          <a href="Snapchat-966804533.jpg" target="_blank">View Certificate</a>
+        </div>
+        <div class="certi-card">
+          <h3>Python Programming</h3>
+          <a href="1000073218.png" target="_blank">View Certificate</a>
+        </div>
       </div>
     </section>
 
@@ -360,7 +400,6 @@
         document.querySelector(this.getAttribute("href")).scrollIntoView({
           behavior: "smooth"
         });
-        // close sidebar on mobile
         if(window.innerWidth <= 900){
           document.getElementById("sidebar").classList.remove("active");
         }
