@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -17,6 +17,7 @@
       min-height: 100vh;
       background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
       color: #fff;
+      flex-direction: row;
     }
 
     /* Sidebar */
@@ -33,20 +34,21 @@
       flex-direction: column;
       align-items: center;
       border-right: 2px solid rgba(255,255,255,0.1);
+      transition: all 0.3s ease-in-out;
     }
 
     .profile {
-      width: 160px;
-      height: 160px;
+      width: 140px;
+      height: 140px;
       border-radius: 50%;
-      background: url("profile.jpg") center/cover;
+      background: url("IMG_20250901_203416.jpg") center/cover;
       border: 4px solid #00c6ff;
       box-shadow: 0 0 20px #00c6ff;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
 
     .sidebar h1 {
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       text-align: center;
       margin-bottom: 10px;
     }
@@ -54,7 +56,7 @@
     .sidebar p {
       text-align: center;
       font-size: 0.9rem;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
       color: #bbb;
     }
 
@@ -87,12 +89,13 @@
     .content {
       margin-left: 280px;
       flex: 1;
-      padding: 50px;
+      padding: 40px;
+      transition: margin-left 0.3s;
     }
 
     section {
-      margin-bottom: 80px;
-      padding: 40px;
+      margin-bottom: 60px;
+      padding: 30px;
       border-radius: 20px;
       background: rgba(255,255,255,0.08);
       backdrop-filter: blur(6px);
@@ -134,7 +137,7 @@
     }
 
     .timeline-item {
-      margin-bottom: 25px;
+      margin-bottom: 20px;
     }
 
     .timeline-item h3 {
@@ -170,6 +173,7 @@
       font-size: 1rem;
       background: rgba(255,255,255,0.15);
       color: #fff;
+      width: 100%;
     }
 
     input::placeholder, textarea::placeholder {
@@ -200,35 +204,90 @@
       color: #bbb;
       margin-top: 30px;
     }
+
+    /* Responsive Design */
+    @media (max-width: 900px) {
+      body {
+        flex-direction: column;
+      }
+      .sidebar {
+        position: relative;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 15px;
+        border: none;
+      }
+      .profile {
+        width: 60px;
+        height: 60px;
+        margin: 0;
+      }
+      .sidebar h1, .sidebar p {
+        display: none;
+      }
+      nav ul {
+        flex-direction: row;
+        gap: 10px;
+        justify-content: flex-end;
+      }
+      nav ul li a {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+      }
+      .content {
+        margin-left: 0;
+        padding: 20px;
+      }
+      section {
+        padding: 20px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      #skills ul {
+        grid-template-columns: 1fr 1fr;
+      }
+      section h2 {
+        font-size: 1.4rem;
+      }
+    }
+
+    @media (max-width: 400px) {
+      #skills ul {
+        grid-template-columns: 1fr;
+      }
+      nav ul {
+        flex-wrap: wrap;
+        gap: 5px;
+      }
+    }
   </style>
 </head>
 <body>
 
   <!-- Sidebar -->
-  
-    <section id="profile">
-        <img src="IMG_20250901_203416.jpg" alt="profile picture" height="100" width="100">
-        <div class="intro">
-    <h1>YOGAPRIYA K </h1>
-    <p>B.Sc Computer science</p>
+  <aside class="sidebar">
+    <div class="profile"></div>
+    <h1>YOGAPRIYA K</h1>
+    <p>B.Sc Computer Science</p>
     <nav>
       <ul>
-        <li><a href="#about">About Me</a></li>
+        <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#education">Education</a></li>
+        <li><a href="#certi">Certificates</a></li>
         <li><a href="#resume">Resume</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-  </div>
+  </aside>
 
   <!-- Main Content -->
   <div class="content">
     <section id="about">
       <h2>About Me</h2>
-      <p>Hello11 Detail ortented and curious computer science  fresher with strong foundations in data structures,object-oriented programming,and databases,eager to contribute to real world software devalopment projects.
-        
-      </p>
+      <p>Detail-oriented and curious Computer Science fresher with strong foundations in Data Structures, Object-Oriented Programming, and Databases. Eager to contribute to real-world software development projects.</p>
     </section>
 
     <section id="skills">
@@ -239,7 +298,6 @@
         <li>JavaScript</li>
         <li>Java</li>
         <li>Python</li>
-        
       </ul>
     </section>
 
@@ -248,29 +306,22 @@
       <div class="timeline">
         <div class="timeline-item">
           <h3>B.Sc Computer Science</h3>
-          <p>Bharathiyar University </p>
+          <p>Bharathiyar University</p>
         </div>
         <div class="timeline-item">
           <h3>Higher Secondary</h3>
-          <p>Goverment higher secondary school narasipuram</p>
+          <p>Government Higher Secondary School, Narasipuram</p>
         </div>
       </div>
     </section>
-     <section id="certi" class="card">
-  <h2>Certificates</h2>
-  <div class="certi-card">
 
-    <a href="WEB.PIC.png" class="certi-btn" target="_blank">Certificate 1</a>
-    <br>
-    <a href="Snapchat-966804533.jpg" class="certi-btn" target="_blank">Certificate 2</a>
-    <br>
-    <a href="1000073218.png" class="certi-btn" target="_blank">Certificate 3</a>
-
-  </div>
-</section>
-
-<footer>
-        
+    <section id="certi">
+      <h2>Certificates</h2>
+      <div>
+        <a href="WEB.PIC.png" target="_blank">Certificate 1</a><br>
+        <a href="Snapchat-966804533.jpg" target="_blank">Certificate 2</a><br>
+        <a href="1000073218.png" target="_blank">Certificate 3</a>
+      </div>
     </section>
 
     <section id="resume">
@@ -288,11 +339,10 @@
       </form>
     </section>
 
-    
-      <p>©  YOGAPRIYA K | All Rights Reserved</p>
+    <footer>
+      <p>© YOGAPRIYA K | All Rights Reserved</p>
     </footer>
   </div>
 
 </body>
 </html>
-
